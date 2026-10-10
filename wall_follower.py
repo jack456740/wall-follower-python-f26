@@ -18,6 +18,12 @@ def find_min_dist(ranges, thetas):
     min_dist, min_angle = None, None
 
     # TODO: Find the length and angle of the shortest distance in the ray.
+    for dist, angle in zip(ranges, thetas):
+        if dist == 0:
+            continue
+        if min_dist is None or dist < min_dist:
+            min_dist = dist
+            min_angle = angle
 
     return min_dist, min_angle
 
